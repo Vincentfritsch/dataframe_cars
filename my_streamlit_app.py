@@ -13,6 +13,8 @@ def get_data():
 								cmap = sns.color_palette("vlag", as_cmap=True)
 								)
     st.pyplot(viz_correlation.figure)
+    st.write("Comment: Cylinders, Cubidinches, HP and Weighlbs are highly positively \
+        correlated.")
     return df_cars.set_index('continent')
 
 try:
@@ -37,7 +39,6 @@ try:
         if "year" in categories:
             categories.remove('year')
             
-        print(categories)
         for cat in categories:
             st.write(f'### Evolution on {cat} thru the years for each country\n')
             chart = (
